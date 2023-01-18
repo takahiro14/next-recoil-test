@@ -67,10 +67,6 @@ export default function Home() {
     setrecoTodos(newArray);
   };
 
-  const onSubmit3 = (todo) => {
-    console.log(todo);
-  };
-
   const [todos, setTodos] = useState([]);
   const [recotodos, setrecoTodos] = useRecoilState(todoState);
 
@@ -160,15 +156,21 @@ Error: Hydration failed because the initial UI does not match what was rendered 
           })}
         </ul>
         <hr />
-        編集したいID指定↓
-        <Input {...register("editNum", { required: false })} />
-        タイトルを入力↓
-        <Input {...register("editTitle", { required: false })} />
-        <Button onClick={handleSubmit(onSubmit2)}>編集</Button>
-        <br />
-        <br />
+        <h1>ID指定編集</h1>
+        <Center>
+          <p>編集したいIDを入力:</p>
+          <Input w={50} {...register("editNum", { required: false })} />
+          <p>　タイトルを入力:</p>
+          <Input w={200} {...register("editTitle", { required: false })} />
+          <Button margin={2} onClick={handleSubmit(onSubmit2)}>
+            編集
+          </Button>
+          <br />
+          <br />
+        </Center>
+        <hr />
         <div>
-          <Link href="./about">aboutへGo!</Link>
+          <Link href="./about">⇒ユーザの名前確認と変更へGo!</Link>
         </div>
         <br />
         <br />
