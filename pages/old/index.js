@@ -17,7 +17,7 @@ import {
 
 //recoilインポート
 import { useRecoilState } from "recoil";
-import { countState, userState, todoState } from "../components/atoms";
+import { countState, userState, todoState } from "../../components/atoms";
 
 //リアクトフック系インポート
 import { useState } from "react";
