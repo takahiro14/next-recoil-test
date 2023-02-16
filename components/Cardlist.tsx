@@ -20,11 +20,16 @@ import { useRecoilState } from "recoil";
 import { userState, todoState } from "../components/atoms";
 
 //リアクトフック系インポート
+import { useState } from "react";
 
 export function Cardlist({ children }: any) {
+  //入れたらできた。
+  const [todos, setTodos] = useState([]);
+  const [recotodos, setrecoTodos] = useRecoilState(todoState);
+
   // todoを削除する
   const deleteTodo = (index) => {
-    const newTodos = children.filter((todo, todoIndex) => {
+    const newTodos = children.filter((todo1, todoIndex) => {
       return index !== todoIndex;
     });
     setTodos(newTodos);
