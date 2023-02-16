@@ -22,6 +22,11 @@ import { userState, todoState } from "../components/atoms";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
+//コンポーネントインポート
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
+import { Cardlist } from "../components/Cardlist";
+
 const EditForm = () => {
   const {
     register,
@@ -116,9 +121,8 @@ export default function Home() {
 
       {/* メイン ここから*/}
       <main>
-        <Heading>
-          <Center>Next ToDo登録アプリ</Center>
-        </Heading>
+        <Header />
+
         <Box m={20}>
           <form onSubmit={handleSubmit(onSubmit1)} id="form1">
             <Center>
@@ -135,6 +139,11 @@ export default function Home() {
             </Center>
           </form>
         </Box>
+        <div>
+          カードリストのコンポーネントから書き出し版　削除実装難しい-----
+          <Cardlist children={recotodos} />
+          カードリストのコンポーネントから書き出し　ここまで-----
+        </div>
         <Box mb={10}>
           <ul>
             {/* なぜかエラーでる。。。。 Unhandled Runtime Error
@@ -175,6 +184,8 @@ Error: Hydration failed because the initial UI does not match what was rendered 
           <Link href="./about">⇒ユーザの名前確認と変更へGo!</Link>
         </Box>
         <Divider orientation="horizontal" />
+
+        <Footer />
       </main>
       {/* メイン ここまで*/}
     </>

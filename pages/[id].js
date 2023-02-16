@@ -25,6 +25,10 @@ import {
   HStack,
 } from "@chakra-ui/react";
 
+//コンポーネントインポート
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
+
 const product = () => {
   const [recotodos, setrecoTodos] = useRecoilState(todoState);
 
@@ -57,8 +61,9 @@ const product = () => {
 
   return (
     <div>
+      <Header />
+
       <Heading mb={5}>
-        <Center>Next ToDo登録アプリ</Center>
         <Center>--編集画面--</Center>
       </Heading>
       <Center>
@@ -93,10 +98,10 @@ const product = () => {
           </ul>
         </Box>
       </Center>
-
       <div>
         <Link href="./">Homeへ戻る</Link>
       </div>
+      <Footer />
     </div>
   );
 };
